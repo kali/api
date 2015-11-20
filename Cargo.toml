@@ -4,7 +4,9 @@ version = "0.1.0"
 authors = ["Simon Paitrault <contact@freyskeyd.fr>"]
 
 [dependencies]
-threadpool = "0.1"
+threadpool = "*"
+scoped_threadpool = "*"
+promising-future = "0.1.6"
 iron = "*"
 router = "*"
 nlp = { git = "https://github.com/Freyskeyd/nlp.git", branch = "feat-metaphone" }
