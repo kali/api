@@ -1,0 +1,12 @@
+[package]
+name = "api"
+version = "0.1.0"
+authors = ["Simon Paitrault <contact@freyskeyd.fr>"]
+
+[dependencies]
+threadpool = "0.1"
+iron = "*"
+router = "*"
+nlp = { git = "https://github.com/Freyskeyd/nlp.git", branch = "feat-metaphone" }
+serde = "0.6.1"
+serde_json = "*"

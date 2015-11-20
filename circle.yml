@@ -1,0 +1,6 @@
+machine:
+  pre:
+    - curl -sf -L https://static.rust-lang.org/rustup.sh | sh /dev/stdin --yes
+test:
+  override:
+    - cargo test -v
