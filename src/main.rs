@@ -56,17 +56,17 @@ fn main() {
         let (lev_fut, lev_prom) = future_promise();
         let (jaro_fut, jaro_prom) = future_promise();
         pool.scoped(|scope| {
-            let query_lev = query.to_owned();
-            let query_jaro = query.to_owned();
-            scope.execute(move|| {
+            scope.execute(|| {
                 for i in v {
-                    levenshtein(&query_lev, &i);
+                    let p:&str = &i;
+                    levenshtein(&query, &p);
                 }
                 lev_prom.set("lev-foo".to_string());
             });
-            scope.execute(move|| {
+            scope.execute(|| {
                 for word in v {
-                    jaro(&query_jaro, &word);
+                    let p:&str = &word;
+                    jaro(&query, &p);
                 }
                 jaro_prom.set("lev-bar".to_string());
             });
